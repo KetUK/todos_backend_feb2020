@@ -27,10 +27,14 @@ app.get("/tasks", function (request, response) {
       {
         id: 1,
         text: "Wash the dishes",
+        completed: true,
+        date: "2020-04-17",
       },
       {
-        id: 2,
-        text: "Wash the car",
+        id: 1,
+        text: "Wash the Car",
+        completed: false,
+        date: "2020-04-18",
       },
     ],
   });

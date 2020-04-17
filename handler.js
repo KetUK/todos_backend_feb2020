@@ -38,17 +38,21 @@ app.get("/tasks", function (request, response) {
 
 app.delete("/tasks/:id", function (request, response) {
   // Should delete the task with the specified ID from the database
-  // For now, just send back a text message (and status 200)
+  response
+    .status(200)
+    .send({ message: `You issued a delete request for ID:"  ${request.params.id}` });
 });
 
 app.post("/tasks", function (request, response) {
   // Should INSERT INTO the database the new task
-  // For now, just send back a text message (and status 200) "New task saved"
+  response.status(200).send({ message: "New task saved" });
 });
 
 app.put("/tasks/:id", function (request, response) {
   // Should UPDATE a task in the DB
-  // For now, just send back a text message (and status 200)
+  response
+    .status(200)
+    .send({ message: `You issued a update request for ID:"  ${request.params.id}` });
 });
 
 module.exports.app = serverlessHttp(app);

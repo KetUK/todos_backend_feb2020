@@ -3,7 +3,7 @@ service: todo-backend-feb2020
 provider:
   name: aws
   runtime: nodejs12.x
-  profile: clos
+  profile: default
   region: eu-west-1
 
 functions:

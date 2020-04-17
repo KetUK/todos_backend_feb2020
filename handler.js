@@ -47,9 +47,13 @@ app.delete("/tasks/:id", function (request, response) {
     .send({ message: `You issued a delete request for ID:"  ${request.params.id}` });
 });
 
+app.use(express.json()); // for parsing application/json
+
 app.post("/tasks", function (request, response) {
   // Should INSERT INTO the database the new task
-  response.status(200).send({ message: "New task saved" });
+  response.status(201).send({
+    message: `Received a request to add task ${request.body.text} with date ${request.body.date}`,
+  });
 });
 
 app.put("/tasks/:id", function (request, response) {
